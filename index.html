@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<head>
+   <meta name="viewport" content="width=500px ,initial-scale=0.64 ,user-scalable=no"/>
+ 　<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,initial-scale=1">
+  <!-- ① A-Frame を読み込む -->
+      <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <!-- AR.jsライブラリ読み込み -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="./js/aframe-ar.js"></script>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="events.js"></script>
+<!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="sample.css" type="text/css" media="screen and (max-width: 480px)"><!--iphone6,7縦-->
+        <link rel="stylesheet" href="medium.css" type="text/css" media="screen and (min-width: 760px)"><!--ipad縦-->
+     
+        
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+
+
+
+ 
+<!-- ③ シーンを追加 -->
+<a-scene embedded arjs="debugUIEnabled:false" vr-mode-ui="enabled:false">
+
+  <!--オブジェクト追加-->
+ 
+            
+      <a-assets>
+    
+
+
+        <image id="note"  src="matu_top.jpg"></image>
+        <image id="note2"  src="kimu_top.jpg"></image>
+        <image id="note3"  src="non_top.jpg"></image>
+        <image id="note4"  src="kawa_top.jpg"></image>
+        <image id="note5"  src="risa_top.jpg"></image>
+        <image id="note6"  src="kino_top.jpg"></image>
+
+        <image id="note0"  src="setumei.jpg"></image>
+
+
+
+
+        </a-assets>
+
+        <a-marker id="animated-marker0" preset="custom" type='pattern' url="pattern-marker-17.patt">
+          <a-image src="#note0" 
+            rotation="-90 0 0"
+        position="0 0.2 0" 
+        width="3"
+        height="3">   
+    </a-image>
+    
+    
+    </a-marker>
+
+
+
+           
+  <!-- 1つめのAR-->
+  <a-marker id="animated-marker" preset="custom" type='pattern' url="pattern-marker.patt">
+  <a-image src="#note" 
+    position="0 0 0" 
+    rotation="-90 0 0"
+    width="3"
+    height="3"
+    counthandler
+    id="note_1">   
+</a-image>
+
+
+
+
+</a-image>
+
+
+
+</a-marker>
+
+  <!--2つ目のAR-->
+  <a-marker id="animated-marker2" preset="custom" type='pattern' url="pattern-marker-2.patt">
+      <a-image src="#note2" 
+        rotation="-90 0 0"
+    position="0 0 0" 
+    width="3"
+    height="3"
+    counthandler2
+    id="note_2">   
+</a-image>
+
+
+</a-marker>
+
+  <!--3つ目のAR-->
+  <a-marker id="animated-marker3" preset="custom" type='pattern' url="pattern-marker-3.patt">
+      <a-image src="#note3" 
+      rotation="-90 0 0"
+    position="0 0 0" 
+    width="3"
+    height="3"
+    counthandler3
+    id="note_3">   
+</a-image>
+
+
+  
+  </a-marker>
+
+  <!--4つ目のAR-->
+  <a-marker id="animated-marker4" preset="custom" type='pattern' url="pattern-marker-4.patt">
+      <a-image src="#note4" 
+      rotation="-90 0 0"
+    position="0 0 0" 
+    width="3"
+    height="3"
+    counthandler4
+    id="note_4">   
+</a-image>
+
+
+</a-marker>
+<!--5つ目-->
+
+  <a-marker id="animated-marker5" preset="custom" type='pattern' url="pattern-marker-5.patt">
+      <a-image src="#note5" 
+      rotation="-90 0 0"
+    position="0 0 0" 
+    width="3"
+    height="3"
+    counthandler5
+   id="note_5">   
+</a-image>
+
+
+</a-marker>
+
+<!--6つ目-->
+<a-marker id="animated-marker6" preset="custom" type='pattern' url="pattern-marker-6.patt">
+    <a-image src="#note6" 
+    rotation="-90 0 0"
+    position="0 0 0" 
+    width="3"
+    height="3"
+    counthandler6
+    id="note_6">   
+</a-image>
+
+
+
+</a-marker>
+
+<!--7---->
+
+
+  <!-- カメラを追加 -->
+  <a-entity camera></a-entity>
+</a-scene>
+
+
+ 
+
+
+  <script>
+  
+
+    $(function TEST() {
+                $('#b1').click(function(e) {
+                  $('#note_1').attr('src', 'matu_tyumoku.jpg');
+                  
+                });
+                $('#b1-2').click(function(e) {
+                  $('#note_1').attr('src', 'matu_kikkake.jpg');
+                  
+                });
+                $('#b1-3').click(function(e) {
+                  $('#note_1').attr('src', 'matu_ura_ko.jpg');
+                  
+                });
+
+                
+                $('#b2').click(function(e) {
+                  $('#note_2').attr('src', 'kimu_tyumoku.jpg');
+                });
+                $('#b2-2').click(function(e) {
+                  $('#note_2').attr('src', 'kimu_kikkake.jpg');
+                });
+                $('#b2-3').click(function(e) {
+                  $('#note_2').attr('src', 'kimu_ura_ko.jpg');
+                });
+
+
+
+                $('#b3').click(function(e) {
+                  $('#note_3').attr('src', 'non_tyumoku.jpg');
+                });
+                $('#b3-2').click(function(e) {
+                  $('#note_3').attr('src', 'non_kikkake.jpg');
+                });
+                $('#b3-3').click(function(e) {
+                  $('#note_3').attr('src', 'non_ura_ko.jpg');
+                });
+
+
+                $('#b4').click(function(e) {
+                  $('#note_4').attr('src', 'kawa_tyumoku.jpg');
+                });
+                $('#b4-2').click(function(e) {
+                  $('#note_4').attr('src', 'kawa_kikkake.jpg');
+                });
+                $('#b4-3').click(function(e) {
+                  $('#note_4').attr('src', 'kawa_ura_ko.jpg');
+                });
+
+
+
+
+
+                $('#b5').click(function(e) {
+                  $('#note_5').attr('src', 'risa_tyumoku.jpg');
+                });
+                $('#b5-2').click(function(e) {
+                  $('#note_5').attr('src', 'risa_kikkake.jpg');
+                });
+                $('#b5-3').click(function(e) {
+                  $('#note_5').attr('src', 'risa_ura_ko.jpg');
+                });
+
+
+
+
+                $('#b6').click(function(e) {
+                  $('#note_6').attr('src', 'kino_tyumoku.jpg');
+                });
+                $('#b6-2').click(function(e) {
+                  $('#note_6').attr('src', 'kino_kikkake.jpg');
+                });
+                $('#b6-3').click(function(e) {
+                  $('#note_6').attr('src', 'kino_ura_ko.jpg');
+                });
+
+
+
+
+              });
+    </script>
+
+
+<div>
+  <button type="button" id="b-final" onclick="MoveCheck();">LAST ARを見る</button>
+</div>
+
+
+
+
+<div>
+    <button type="button" id="b1">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b1-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b1-3">　制作の裏話　</button>
+  </div>
+
+
+
+  <div>
+    <button type="button" id="b2">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b2-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b2-3">　制作の裏話　</button>
+  </div>
+
+
+  <div>
+    <button type="button" id="b3">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b3-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b3-3">　制作の裏話　</button>
+  </div>
+
+
+  <div>
+    <button type="button" id="b4">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b4-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b4-3">　制作の裏話　</button>
+  </div>
+
+
+
+ 
+  <div>
+    <button type="button" id="b5">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b5-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b5-3">　制作の裏話　</button>
+  </div>
+
+
+
+  <div>
+    <button type="button" id="b6">&nbsp;注目ポイント&nbsp;</button>
+  </div>
+  <div>
+    <button type="button" id="b6-2">制作のきっかけ</button>
+  </div>
+  <div>
+    <button type="button" id="b6-3">　制作の裏話　</button>
+  </div>
+
+
+
+
+
+<!--フッター部分-->
+
+<div class="mokumetyou"></div>
+<div class="mokumetyou2"></div>
+
+
+
+<div class="footer">
+
+  <span class="masking-tape" id="maste">AR STAMP CARD</span>
+ 
+
+
+    <div class="footerbox1" id="box1" myFunction(); ></div>    
+    <div class="footerbox2" id="box2" myFunction2(); > </div>
+    <div class="footerbox3" id="box3" myFunction3(); ></div>
+    <div class="footerbox4" id="box4" myFunction4(); ></div>
+    <div class="footerbox5" id="box5" myFunction5(); ></div>
+    <div class="footerbox6" id="box6" myFunction6(); ></div>
+   
+  
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
